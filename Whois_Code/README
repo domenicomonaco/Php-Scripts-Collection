@@ -1,0 +1,38 @@
+/*
+Whois domain - version 1.22
+Check domain names for different TLD's
+
+Copyright (c) 2004 - 2006, Olaf Lederer
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+    * Neither the name of the finalwebsites.com nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+_________________________________________________________________________
+available at http://www.finalwebsites.com 
+Comments & suggestions: http://www.finalwebsites.com/contact.php
+
+Updates:
+version 1.10 - In this version is it possible to check domain names for all tld's which are configured inside the server list. 
+
+New Files: "multi_whois_list.php" this file is an example for using the new functions and is also an extended version of the main class.
+"multi_whois_detail.php" you need this file to get detail information ondomain names checked with the list file.
+
+version 1.11 - I added the var $whois_param, use this var via the serverlist to use extra (required) parameters for some whois servers.
+
+version 1.12 - I changed the get_whois_data() and the check_only() method, because the information was not right if there was no server connection. This class works now for PHP with the setting register_globals = off.
+
+version 1.13 - I added a boolean to the check_only() method to use this information for domain register pages. You can use this "bool" to redirect to an other page (to sell the free name f.e.).
+
+version 1.20 - I changed in this class the simple domain check and the method to obtain whois data, because there are several problems with timeouts by calling the whois servers. In this version there are two ways to get the whois data: the old method with fsockopen and (new) via the linux command line with the command "whois -h". The last one is much faster and uses features like re-directing. The class is modified to handle .nl queries while using the "is" parameter.
+
+version 1.21 - There was small problem if the user requests data about .de domein (denic), the exec function will not work for this kind of tld. I put in the method get_whois_data() an if clause to use for this kind of tld always a socket connection.
+
+version 1.22 - Added additional whois server setting (.eu, .us) and the regex pattern is a little bit improved now.
+*/
+
