@@ -1,4 +1,5 @@
 <?php
+//Author Domenico Monaco
 //simple example of recursive require and read *.ext of files
 $dir = "./path_file/"; //Set dir
 $dh = opendir($dir);
@@ -18,5 +19,4 @@ closedir($dh);
 for ($d=0;$d<$dmax=(sizeof($rFile));$d++){
   require ($dir.$rFile[$d]);  
 }
- 
 ?>
